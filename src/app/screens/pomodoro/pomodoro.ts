@@ -44,7 +44,7 @@ export class Pomodoro {
   }
 
   pausePomodoro() {
-    this.isRunning.set(false);
+    this.isRunning.set(true);
     if (this.intervalId === null) return;
     clearInterval(this.intervalId);
     this.intervalId = null;
