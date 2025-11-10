@@ -1,0 +1,20 @@
+<div class="flex flex-col gap-4 ">
+
+    <app-header-pages pageSub="Bem vindo a pagina To do List, utilize para guardar e gerenciar suas tarefas diárias" pageName="To do List"></app-header-pages>
+    <div class="flex flex-col gap-4">
+        <input class="input placeholder-gray-500 border-zinc-600" placeholder="Criar Tarefa" (keyup.enter)="addTodo($event)" />
+        <div class="flex flex-col gap-4 ">
+            @for(item of todosService.items(); track item.id){
+            <div class=" flex rounded-2xl border border-zinc-600 px-4 py-2 items-center">
+                <p class="flex-1" [class.line-through]=" item.completed">
+                    {{item.title}}
+                </p>
+                <div class="flex gap-4 p-4">
+                    <button [class.bg-green-700]="item.completed" [class.bg-yellow-700]="!item.completed" class="rounded-2xl  px-2">Status: {{item.completed ? "Completo": "Pendente" }}</button>
+                    <button class="btn btn-primary" (click)="todosService.toggleStatus(item.id)">Alterar Status</button>
+                    <button class="btn btn-danger" (click)="todosService.removeTask(item.id)">X</button>
+                </div>
+            </div>}
+        </div>
+    </div>
+</div>
