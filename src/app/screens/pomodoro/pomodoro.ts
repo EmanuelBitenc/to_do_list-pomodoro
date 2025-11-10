@@ -10,7 +10,7 @@ import { HeaderPages } from '../../components/header-pages/header-pages';
 export class Pomodoro {
   timerMinutes = signal(25);
   timerSeconds = signal(0);
-  isRunning = signal(false);
+  isRunning = signal(true);
 
   private intervalId: any = null;
 
