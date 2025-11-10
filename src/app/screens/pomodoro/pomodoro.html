@@ -2,14 +2,14 @@
     <div>
         <app-header-pages pageSub="Bem vindo a pagina pomodoro, clique no botão a baixo para utilizar o contador." pageName="Pomodoro"></app-header-pages>
         <div class="text-zinc-700  text-9xl">
-            <div class="relative ">{{timerMinutes()<10 ?"0"+timerMinutes(): timerMinutes()}} :{{timerSeconds()<10 ?"0"+timerSeconds() :timerSeconds()}} <div class="absolute top-4 right-25 text-6xl">{{isRunning() ? "" : "℗"}}</div>
+            <div class="relative mx-auto w-80">{{timerMinutes()<10?"0"+timerMinutes():timerMinutes()}}:{{timerSeconds()<10 ?"0"+timerSeconds() :timerSeconds()}} <span class="absolute top-4  text-6xl">{{isRunning() ? "" : "℗"}}</span>
+            </div>
         </div>
     </div>
-</div>
-<div class="flex gap-10 justify-center">
-    <button class="btn btn-primary " (click)="startPomodoro()">Iniciar</button>
-    <button class="btn btn-secondary" (click)="pausePomodoro()">Pausar</button>
-    <button class="btn btn-danger" (click)="resetPomodoro()">Resetar</button>
+    <div class="flex gap-10 justify-center">
+        <button class="btn btn-primary " (click)="startPomodoro()">Iniciar</button>
+        <button class="btn btn-secondary" (click)="pausePomodoro()">Pausar</button>
+        <button class="btn btn-danger" (click)="resetPomodoro()">Resetar</button>
 
-</div>
+    </div>
 </div>
